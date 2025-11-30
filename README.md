@@ -1,2 +1,33 @@
-# Embedded-C-Traffic-Light-Controller
-Finite State Machine implementation in C for Traffic Light Control using Direct Register Access.
+# Smart Traffic Light Controller (Embedded C)
+
+This project demonstrates a bare-metal embedded C implementation of a **Traffic Light Control System** using a **Finite State Machine (FSM)** architecture.
+
+It is designed to simulate low-level hardware interaction typically found in microcontrollers like STM32 or AVR, without relying on high-level libraries (HAL).
+
+## 🚀 Key Features
+
+* **Finite State Machine (FSM):** Uses function pointers to manage state transitions (Stop -> Ready -> Go) efficiently, avoiding complex `if-else` spaghetti code.
+* **Direct Register Access:** Simulates Memory-Mapped I/O using `uint32_t` pointers and `structs`, mimicking real hardware register maps.
+* **Bit Manipulation:** Uses bitwise operators (`|`, `&`, `~`, `<<`) for setting and clearing specific bits in the Output Data Register (ODR).
+* **Hardware Abstraction:** Includes a virtual hardware layer (`VIRTUAL_MEMORY`) allowing the code to be tested and debugged on a PC environment before deploying to actual hardware.
+
+## 🛠️ Technical Concepts Applied
+
+* **Pointers & Volatile:** Correct usage of `volatile` for hardware registers.
+* **Structs & Unions:** creating memory maps for peripherals.
+* **Function Pointers:** Implementing callback-style state transitions.
+* **Bitwise Logic:** Masking and shifting operations.
+
+## 💻 Code Structure
+
+```c
+// Example of the State Machine Logic
+void (*Next_State)(void) = State_Stop; 
+
+int main() {
+    while(1) {
+        Next_State(); // Execute the current state
+    }
+}
+## AUTHOR
+Ahmet Emin Satilmis Mathematics Engineering Student at Yıldız Technical University Focus areas: Embedded Systems, C/C++, Machine Learning
