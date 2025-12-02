@@ -29,5 +29,7 @@ int main() {
         Next_State(); // Execute the current state
     }
 }
-## AUTHOR
+
+## Author
+
 Ahmet Emin Satilmis Mathematics Engineering Student at Yıldız Technical University Focus areas: Embedded Systems, C/C++, Machine Learning
